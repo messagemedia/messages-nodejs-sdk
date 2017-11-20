@@ -1,0 +1,21 @@
+environment:
+  nodejs_version: "4.5"
+matrix:
+  allow_failures:
+    - nodejs_version: "4.5"
+
+# Install scripts.
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
+  - node --version
+  - npm --version
+
+# Post-install test scripts.
+test_script:
+  # command to run linter
+  - npm run lint
+  # run tests
+  - npm test
+# Don't actually build.
+build: off

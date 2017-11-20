@@ -1,0 +1,43 @@
+{
+  "name": "messagemedia-messages",
+  "version": "1.0.0",
+  "description": "The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "mocha --recursive"
+  },
+  "keywords": [],
+  "author": "APIMATIC SDK Generator",
+  "bugs": {
+    "email": "support@apimatic.io"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
+  },
+  "dependencies": {
+    "request": "^2.55.0",
+    "mocha": "^3.1.2",
+    "chai": "^3.5.0",
+    "moment": "^2.17.1",
+    "winston": "^2.1.1"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "commonjs": true,
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+      "indent": ["error", 4],
+      "no-underscore-dangle": 0,
+      "strict": 0,
+      "prefer-rest-params": 0
+    }
+  }
+}
