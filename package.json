@@ -1,5 +1,5 @@
 {
-  "name": "messagemedia-messages",
+  "name": "messagemedia-messages-sdk",
   "version": "1.0.0",
   "description": "The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.",
   "main": "./lib/index.js",
@@ -7,10 +7,12 @@
     "lint": "eslint lib",
     "test": "mocha --recursive"
   },
-  "keywords": [],
-  "author": "APIMATIC SDK Generator",
+  "keywords": ["sms", "messaging", "messagemedia", "sms-api", "sms-gateway", "sms-client"],
+  "homepage": "https://developers.messagemedia.com/",
+  "license" : "Apache-2.0",
+  "author": "MessageMedia Developers",
   "bugs": {
-    "email": "support@apimatic.io"
+    "email": "developers@messagemedia.com"
   },
   "devDependencies": {
     "eslint": "^3.18.0",
