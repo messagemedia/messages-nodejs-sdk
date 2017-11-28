@@ -15,19 +15,11 @@ To check if node and npm have been successfully installed, write the following c
 
 ![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=MessageMediaMessages-Node)
 
-Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
+Now install messagemedia-messages-sdk via npm by using
+* `npm install messagemedia-messages-sdk`
 
-```bash
-npm install
-```
-
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=MessageMediaMessages-Node)
-
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
-
-This will install all dependencies in the `node_modules` folder.
-
-Once dependencies are resolved, you will need to move the folder `MessageMediaMessages ` in to your `node_modules` folder.
+Alternatively, add the following to the dependancies section of your package.json
+* `"messagemedia-messages-sdk": "^1.0.0"`
 
 ## How to Use
 
