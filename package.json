@@ -7,9 +7,16 @@
     "lint": "eslint lib",
     "test": "mocha --recursive"
   },
-  "keywords": ["sms", "messaging", "messagemedia", "sms-api", "sms-gateway", "sms-client"],
+  "keywords": [
+    "sms",
+    "messaging",
+    "messagemedia",
+    "sms-api",
+    "sms-gateway",
+    "sms-client"
+  ],
   "homepage": "https://developers.messagemedia.com/",
-  "license" : "Apache-2.0",
+  "license": "Apache-2.0",
   "author": "MessageMedia Developers",
   "bugs": {
     "email": "developers@messagemedia.com"
@@ -19,13 +26,13 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.5.3"
   },
   "dependencies": {
-    "request": "^2.55.0",
-    "mocha": "^3.1.2",
     "chai": "^3.5.0",
     "moment": "^2.17.1",
+    "request": "^2.55.0",
     "winston": "^2.1.1"
   },
   "eslintConfig": {
@@ -36,10 +43,21 @@
       "mocha": true
     },
     "rules": {
-      "indent": ["error", 4],
+      "indent": [
+        "error",
+        4
+      ],
       "no-underscore-dangle": 0,
       "strict": 0,
       "prefer-rest-params": 0
     }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtremoyne/messages-nodejs-sdk.git"
   }
 }
