@@ -41,7 +41,7 @@ Select the folder of your SDK and click on `Select Folder` to open it up in Subl
 Now right click on the folder name and select the `New File` option to create a new test file. Save it as `index.js` Now import the generated NodeJS library using the following lines of code:
 
 ```js
-var lib = require('lib');
+var sdk = require('messagemedia-messages-sdk');
 ```
 
 Save changes.
@@ -100,11 +100,11 @@ In order to setup authentication in the API client, you need the following infor
 API client can be initialized as following:
 
 ```JavaScript
-const lib = require('lib');
+const sdk = require('messagemedia-messages-sdk');
 
 // Configuration parameters and credentials
-lib.Configuration.basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
-lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
+sdk.Configuration.basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
+sdk.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
 ```
 
@@ -125,7 +125,7 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 The singleton instance of the ``` MessagesController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.MessagesController;
+var controller = sdk.MessagesController;
 ```
 
 ### <a name="update_cancel_scheduled_message"></a>![Method: ](https://apidocs.io/img/method.png ".MessagesController.updateCancelScheduledMessage") updateCancelScheduledMessage
