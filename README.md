@@ -50,7 +50,7 @@ sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
 sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
 
 
-var messageId = 'YOUR_MESSAGE_ID';
+var messageId = "YOUR_MESSAGE_ID";
 
 controller.getMessageStatus(messageId, function(error, response, context) {
   console.log(response)
