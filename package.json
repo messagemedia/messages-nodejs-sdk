@@ -58,6 +58,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gtremoyne/messages-nodejs-sdk.git"
+    "url": "git+https://github.com/messagemedia/messages-nodejs-sdk.git"
   }
 }
