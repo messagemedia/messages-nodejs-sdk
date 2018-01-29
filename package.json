@@ -1,6 +1,6 @@
 {
   "name": "messagemedia-messages-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.",
   "main": "./lib/index.js",
   "scripts": {
