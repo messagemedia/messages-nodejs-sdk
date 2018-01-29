@@ -3,17 +3,17 @@
 
 The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.
 
-## Installing via NPM
+## ⭐️ Installing via NPM
 Now install messagemedia-messages-sdk via npm by using:
 * `npm install messagemedia-messages-sdk`
 
 Alternatively, add the following to the dependencies section of your package.json:
 * `"messagemedia-messages-sdk": "^1.0.0"`
 
-## Get Started
+## 🎬 Get Started
 It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below and a mobile number you wish to send to.
 
-### Send an SMS
+### 🚀 Send an SMS
 * Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
 ```javascript
 const sdk = require('messagemedia-messages-sdk');
@@ -39,7 +39,7 @@ controller.createSendMessages(body, function(error, response, context) {
 });
 ```
 
-### Get Status of a Message
+### 🕓 Get Status of a Message
 You can get a messsage ID from a sent message by looking at the `message_id` from the response of the above example.
 ```javascript
 const sdk = require('messagemedia-messages-sdk');
@@ -58,7 +58,7 @@ controller.getMessageStatus(messageId, function(error, response, context) {
 });
 ```
 
-### Get replies to a message
+### 💬 Get replies to a message
 You can check for replies that are sent to your messages
 ```javascript
 const sdk = require('messagemedia-messages-sdk');
@@ -77,7 +77,7 @@ controller.getCheckReplies(function(error, response, context) {
 });
 ```
 
-### Check Delivery Reports
+### ✅ Check Delivery Reports
 This endpoint allows you to check for delivery reports to inbound and outbound messages.
 ```javascript
 const sdk = require('messagemedia-messages-sdk');
@@ -94,8 +94,8 @@ controller.getCheckDeliveryReports(function(error, response, context) {
 });
 ```
 
-## Documentation
+## 📕 Documentation
 The NodeJS SDK Documentation can be viewed [here](DOCUMENTATION.md)
 
-## Got Stuck?
+## 😕 Got Stuck?
 Please contact developer support at developers@messagemedia.com or check out the developer portal at [developers.messagemedia.com](https://developers.messagemedia.com/)
