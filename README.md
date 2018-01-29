@@ -14,6 +14,7 @@ Alternatively, add the following to the dependencies section of your package.jso
 It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below and a mobile number you wish to send to.
 
 ### Send an SMS
+* Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
 ```javascript
 const sdk = require('messagemedia-messages-sdk');
 const controller = sdk.MessagesController;
@@ -53,6 +54,25 @@ sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
 var messageId = "YOUR_MESSAGE_ID";
 
 controller.getMessageStatus(messageId, function(error, response, context) {
+  console.log(response)
+});
+```
+
+### Get replies to a message
+You can check for replies that are sent to your messages
+```javascript
+const sdk = require('messagemedia-messages-sdk');
+const controller = sdk.RepliesController;
+
+
+// Configuration parameters and credentials
+sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
+sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
+
+
+var messageId = "YOUR_MESSAGE_ID";
+
+controller.getCheckReplies(function(error, response, context) {
   console.log(response)
 });
 ```
