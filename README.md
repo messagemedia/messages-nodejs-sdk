@@ -1,5 +1,6 @@
 # MessageMedia Messages NodeJS SDK
 [![Travis Build Status](https://api.travis-ci.org/messagemedia/messages-nodejs-sdk.svg?branch=master)](https://travis-ci.org/messagemedia/messages-nodejs-sdk)
+[![npm](https://img.shields.io/badge/npm-v1.1.0-blue.svg)](https://www.npmjs.com/package/messagemedia-messages-sdk)
 
 The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.
 
