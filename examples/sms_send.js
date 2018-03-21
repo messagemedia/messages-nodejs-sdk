@@ -14,7 +14,7 @@ var body = new sdk.SendMessagesRequest({
    "messages":[
       {
          "content":"My first message",
-         "destination_number":"+61451325027",
+         "destination_number":"DESTINATION_NUMBER",
       }
    ]
 });
