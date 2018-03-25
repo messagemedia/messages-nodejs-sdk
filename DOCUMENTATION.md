@@ -13,6 +13,7 @@ The MessageMedia Messages API provides a number of endpoints for building powerf
   * [Bug Reports](#bug-bug-reports)
   * [Rate Limits](#rate-limits)
 * [Getting Started](#getting-started)
+* [Supported Node Versions](#supported-node-versions)
 
 ## Authentication
 
@@ -35,7 +36,7 @@ Our API returns standard HTTP success or error status codes. For errors, we will
 | 404 | Not Found |	The resource does not exist |
 | 50X | Internal Server Error | An error occurred with our API |
 
-To view the full list visit: https://github.com/messagemedia/messages-ruby-sdk/wiki/HTTP-Status-Codes
+To view the full list visit: https://github.com/messagemedia/messages-ruby-nodejs/wiki/HTTP-Status-Codes
 
 ## Information
 
@@ -62,6 +63,76 @@ To protect the stability of the API and keep it available to all users, MessageM
 * [Node.js](https://nodejs.org/en/)
 * IDE (We will be using [WebStornm](https://www.jetbrains.com/webstorm/) for this guide)
 
+### 2. Creating a new Node.js project
+* Open WebStorm
+* Click on File -> New project
+* In the popup window, select Node.js Express App
+* The node interpreter should be automatically detected in the Node interpreter option
+* Rename your project from "untitled" to "messages"
+* Click create
+
+![picture](http://i63.tinypic.com/2rpxz7p.jpg)
+
+### 3. Installing the Messages package
+
+* On the navigation bar, Click on View -> Tool Windows -> Terminal
+* Run the following command ``` npm install messagemedia-messages-sdk ``` to install the package
+
+![picture](http://i68.tinypic.com/63w3lv.jpg)
+
+You will see the following displayed in the terminal after a successful installation
+
+![picture](http://i66.tinypic.com/9k9pwx.jpg)
+
+### 4. Adding the code
+* In the folder directory structure, Click on routes -> index.js
+* Replace everything on the page with the following code:
+
+```
+var express = require('express');
+var router = express.Router();
+const sdk = require('messagemedia-messages-sdk');
+const controller = sdk.MessagesController;
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+
+// Configuration parameters and credentials
+    sdk.Configuration.basicAuthUserName = "WjO4JBbdNHHPmLQC5fZO"; // Your API Key
+    sdk.Configuration.basicAuthPassword = "psh1ec3gZvDv3mxOGU52oXy1tKTYpn"; // Your Secret Key
+
+
+    var body = new sdk.SendMessagesRequest({
+        "messages":[
+            {
+                "content":"My first message",
+                "destination_number":"+61451325027",
+            }
+        ]
+    });
+
+    controller.createSendMessages(body, function(error, response, context) {
+        console.log(response)
+    });
+
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
+
+```
+
+This is what it should look like
+
+![picture](http://i66.tinypic.com/259v7rl.jpg)
+
+### 5. Running the application
+* On the navigation bar, click on Run -> Run
+* You will see the following displayed in the console after the application starts running
+
+![picture](http://i67.tinypic.com/jjqyqw.jpg)
+* Once you see that, open your browser and type in http://localhost:3000/ and press Enter
+* You should see a heading that says "Express" and within a few seconds your message should be delivered to the destination number
 
 ## Supported Node Versions
 
@@ -74,6 +145,17 @@ This library supports and is [tested against](https://travis-ci.org/messagemedia
 * Node.js 14.5
 * Node.js 14.6
 * Node.js 14.7
+
+
+
+
+
+
+
+
+
+
+
 
 ## How to Build
 
