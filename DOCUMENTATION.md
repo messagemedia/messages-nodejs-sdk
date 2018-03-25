@@ -3,6 +3,78 @@
 
 The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.
 
+![picture](http://i63.tinypic.com/33tox83.jpg)
+
+## Table of Contents
+* [Authentication](#authentication)
+* [Errors](#errors)
+* [Information](#information)
+  * [Slack and Mailing List](#mailbox_with_mail-slack-and-mailing-list)
+  * [Bug Reports](#bug-bug-reports)
+  * [Rate Limits](#rate-limits)
+* [Getting Started](#getting-started)
+
+## Authentication
+
+Authentication is done via API keys. Sign up at https://developers.messagemedia.com/register/ to get your API keys.
+
+Requests are authenticated using HTTP Basic Auth or HMAC. Provide your API key as the auth_user_name and API secret as the auth_password.
+
+## Errors
+
+Our API returns standard HTTP success or error status codes. For errors, we will also include extra information about what went wrong encoded in the response as JSON. The most common status codes are listed below. 
+
+#### HTTP Status Codes
+
+| Code      | Title       | Description |
+|-----------|-------------|-------------|
+| 202 | OK | The request was successful |
+| 400 | Bad Request | Bad request |
+| 401 | Unauthorized | Your API key is invalid |
+| 402 | Disabled feature | Feature cannot be accessed |
+| 404 | Not Found |	The resource does not exist |
+| 50X | Internal Server Error | An error occurred with our API |
+
+To view the full list visit: https://github.com/messagemedia/messages-ruby-sdk/wiki/HTTP-Status-Codes
+
+## Information
+
+#### :mailbox_with_mail: Slack and Mailing List
+
+If you have any questions, comments, or concerns, please join our Slack channel:
+https://developers.messagemedia.com/collaborate/slack/
+
+Alternatively you can email us at:
+developers@messagemedia.com
+
+#### :bug: Bug reports
+
+If you discover a problem with the SDK, we would like to know about it. Send an email to:
+developers@messagemedia.com
+
+#### :chart_with_upwards_trend: Rate Limits
+
+To protect the stability of the API and keep it available to all users, MessageMedia enforces standard rate limiting. Currently, we have set the quota to 100 SMS per account. We may change these quotas or add new quotas (such as maximum requests per hour) in the future. Requests that hit any of our rate limits will receive a 402 response and you will be notified via email that your quota has been exceeded. If you think you’ll need a higher rate limit, drop us a line at support@messagemedia.com.au
+
+## Getting Started
+
+### 1. Pre-requisites
+* [Node.js](https://nodejs.org/en/)
+* IDE (We will be using [WebStornm](https://www.jetbrains.com/webstorm/) for this guide)
+
+
+## Supported Node Versions
+
+This library supports and is [tested against](https://travis-ci.org/messagemedia/messages-nodejs-sdk) the following Node implementations:
+
+* Node.js 14.1
+* Node.js 14.2
+* Node.js 14.3
+* Node.js 14.4
+* Node.js 14.5
+* Node.js 14.6
+* Node.js 14.7
+
 ## How to Build
 
 The generated SDK relies on [Node Package Manager](https://www.npmjs.com/) (NPM) being available to resolve dependencies. If you don't already have NPM installed, please go ahead and follow instructions to install NPM from [here](https://nodejs.org/en/download/).
