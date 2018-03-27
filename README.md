@@ -4,8 +4,6 @@
 
 The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.
 
-![Alt Text](https://media.giphy.com/media/l0Exov2QmxF5Xwjkc/giphy.gif)
-
 ## ⭐️ Installing via NPM
 Now install messagemedia-messages-sdk via npm by using:
 * `npm install messagemedia-messages-sdk`
