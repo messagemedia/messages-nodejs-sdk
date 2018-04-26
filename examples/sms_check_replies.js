@@ -1,10 +1,14 @@
 const sdk = require('messagemedia-messages-sdk');
+const auth = sdk.AuthHelper;
 const controller = sdk.RepliesController;
 
 
 // Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
+var authUsername = "YOUR_API_KEY"; // Your API Key
+var authPassword = "YOUR_API_SECRET"; // Your Secret Key
+var useHmac = false; // Change to true if you are using HMAC keys
+
+auth(sdk, authUsername, authPassword, useHmac);
 
 
 var messageId = "YOUR_MESSAGE_ID";
