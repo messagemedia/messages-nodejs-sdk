@@ -40,6 +40,34 @@ controller.createSendMessages(body, function(error, response, context) {
 });
 ```
 
+### 🖼 Send an MMS
+* Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
+```javascript
+const sdk = require('messagemedia-messages-sdk');
+const controller = sdk.MessagesController;
+
+
+// Configuration parameters and credentials
+sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
+sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
+
+
+var body = new sdk.SendMessagesRequest({
+   "messages":[
+      {
+         "content":"My first message",
+         "destination_number":"YOUR_MOBILE_NUMBER",
+         "format":"MMS",
+         "media":"https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png"
+      }
+   ]
+});
+
+controller.createSendMessages(body, function(error, response, context) {
+  console.log(response)
+});
+```
+
 ### 🕓 Get Status of a Message
 You can get a messsage ID from a sent message by looking at the `message_id` from the response of the above example.
 ```javascript
