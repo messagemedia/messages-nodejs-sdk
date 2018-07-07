@@ -34,7 +34,6 @@ Our API returns standard HTTP success or error status codes. For errors, we will
 
 | Code      | Title       | Description |
 |-----------|-------------|-------------|
-| 201 | OK | The request was successful |
 | 400 | Invalid Request | The request was invalid |
 | 401 | Unauthorized | Your API credentials are invalid |
 | 403 | Disabled feature | Feature not enabled |
