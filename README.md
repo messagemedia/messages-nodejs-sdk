@@ -94,7 +94,7 @@ var body = new sdk.SendMessagesRequest({
 });
 
 controller.createSendMessages(body, function(error, response, context) {
-  console.log(response)
+  console.log(response);
 });
 ```
 
@@ -122,7 +122,7 @@ var body = new sdk.SendMessagesRequest({
 });
 
 controller.createSendMessages(body, function(error, response, context) {
-  console.log(response)
+  console.log(response);
 });
 ```
 
@@ -160,7 +160,7 @@ sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
 var messageId = "YOUR_MESSAGE_ID";
 
 controller.getCheckReplies(function(error, response, context) {
-  console.log(response)
+  console.log(response);
 });
 ```
 
@@ -177,7 +177,7 @@ sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
 
 
 controller.getCheckDeliveryReports(function(error, response, context) {
-  console.log(response)
+  console.log(response);
 });
 ```
 
