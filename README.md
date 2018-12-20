@@ -92,15 +92,16 @@ body.messages[0] = new lib.Message();
 
 body.messages[0].content = 'Hello world!';
 body.messages[0].destinationNumber = '+61491570156';
-/* Optional Parameters*/
-/* body.messages[0].deliveryReport = false;
+/* Optional Parameters
+body.messages[0].deliveryReport = false;
 body.messages[0].callbackUrl = 'https://mycallback.com';
 body.messages[0].format = [lib.FormatEnum.SMS];
 body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
 body.messages[0].metadata = JSON.parse('{"key":"value"}');
 body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
 body.messages[0].sourceNumber = '+61491570156';
-body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL;
+*/
 
 const promise = controller.sendMessages(body);
 promise.then((response) => {
@@ -127,15 +128,16 @@ body.messages[0] = new lib.Message();
 
 body.messages[0].content = 'Hello world!';
 body.messages[0].destinationNumber = '+61491570156';
-/* Optional Parameters*/
-/* body.messages[0].deliveryReport = false;
+/* Optional Parameters
+body.messages[0].deliveryReport = false;
 body.messages[0].callbackUrl = 'https://mycallback.com';
 body.messages[0].format = [lib.FormatEnum.SMS];
 body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
 body.messages[0].metadata = JSON.parse('{"key":"value"}');
 body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
 body.messages[0].sourceNumber = '+61491570156';
-body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL;
+*/
 
 controller.sendMessages(body, function(error, response, context) {
   if (error) {
@@ -169,14 +171,15 @@ body.messages[0].destinationNumber = '+61491570156';
 body.messages[0].format = [lib.FormatEnum.MMS];
 body.messages[0].media = ['https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png'];
 body.messages[0].subject = 'This is an MMS message';
-/* Optional Parameters*/
-/* body.messages[0].deliveryReport = false;
+/* Optional Parameters
+body.messages[0].deliveryReport = false;
 body.messages[0].callbackUrl = 'https://mycallback.com';
 body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
 body.messages[0].metadata = JSON.parse('{"key":"value"}');
 body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
 body.messages[0].sourceNumber = '+61491570156';
-body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL;
+*/
 
 const promise = controller.sendMessages(body);
 promise.then((response) => {
@@ -206,14 +209,15 @@ body.messages[0].destinationNumber = '+61491570156';
 body.messages[0].format = [lib.FormatEnum.MMS];
 body.messages[0].media = ['https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png'];
 body.messages[0].subject = 'This is an MMS message';
-/* Optional Parameters*/
-/* body.messages[0].deliveryReport = false;
+/* Optional Parameters
+body.messages[0].deliveryReport = false;
 body.messages[0].callbackUrl = 'https://mycallback.com';
 body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
 body.messages[0].metadata = JSON.parse('{"key":"value"}');
 body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
 body.messages[0].sourceNumber = '+61491570156';
-body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL;
+*/
 
 controller.sendMessages(body, function(error, response, context) {
   if (error) {
