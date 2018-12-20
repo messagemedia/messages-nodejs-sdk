@@ -149,7 +149,7 @@ controller.sendMessages(body, function(error, response, context) {
 ```
 
 ### Send an MMS
-Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`. For detailed information about the body parameters, visit the [API documentation](https://developers.messagemedia.com/code/messages-api-documentation/). 
+Destination and source number should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156` NOT `0491570156`. For detailed information about the body parameters, visit the [API documentation](https://developers.messagemedia.com/code/messages-api-documentation/). 
 
 #### Asynchronous
 ```javascript
