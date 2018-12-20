@@ -342,6 +342,45 @@ controller.checkDeliveryReports(function(error, response, context) {
 });
 ```
 
+### Check credits remaining (Prepaid accounts only)
+This endpoint allows you to check for credits remaining on your prepaid account.
+
+#### Asynchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.MessagesController;
+
+const promise = controller.checkCreditsRemaining();
+
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
+});
+```
+
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.MessagesController;
+
+controller.checkCreditsRemaining(function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
+});
+```
+
 ## :closed_book: API Reference Documentation
 Check out the [full API documentation](https://developers.messagemedia.com/code/messages-api-documentation/) for more detailed information.
 
