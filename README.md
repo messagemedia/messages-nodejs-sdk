@@ -73,7 +73,7 @@ Alternatively, add the following to the dependencies section of your package.jso
 It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below and a mobile number you wish to send to.
 
 ### Send an SMS
-Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
+Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`. For detailed information about the body parameters, visit the [API documentation](https://developers.messagemedia.com/code/messages-api-documentation/).
 
 #### Asynchronous
 ```javascript
@@ -147,23 +147,9 @@ controller.sendMessages(body, function(error, response, context) {
   }
 });
 ```
-#### Message body parameters
-
-| Name      | Description       | Example | Types | Required? |
-|-----------|-------------------|---------|-------| --------- |
-| Content | Description | `body.messages[0].content = 'Hello world!';` | - | Yes |
-| Destination Number | Description | `body.messages[0].destinationNumber = '+61491570156';` | - | Yes |
-| Delivery Report | Description | `body.messages[0].deliveryReport = false;` | - | No |
-| Callback URL | Description | `body.messages[0].callbackUrl = 'https://mycallback.com` | - | No |
-| Format | Description | `body.messages[0].format = lib.FormatEnum.SMS` | `SMS`, `MMS`, `TTS` | No |
-| Message Expiry Timestamp | Description |	`body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z')` | - | No |
-| Scheduled | Description | `body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z')` | - | No |
-| Metadata | Description | `body.messages[0].metadata = JSON.parse('{"key":"value"}')` | - | No |
-| sourceNumber | Description | `body.messages[0].sourceNumber = '+61491570156` | - | No |
-| sourceNumberType | Description | `body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL` | `INTERNATIONAL`, `ALPHANUMERIC`, `SHORTCODE` | No |
 
 ### Send an MMS
-Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
+Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`. For detailed information about the body parameters, visit the [API documentation](https://developers.messagemedia.com/code/messages-api-documentation/). 
 
 #### Asynchronous
 ```javascript
