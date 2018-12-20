@@ -74,111 +74,271 @@ It's easy to get started. Simply enter the API Key and secret you obtained from 
 
 ### Send an SMS
 Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
+
+#### Asynchronous
 ```javascript
-const sdk = require('messagemedia-messages-sdk');
-const controller = sdk.MessagesController;
+const lib = require('messagemedia-messages-sdk');
 
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
 
-// Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
+var controller = lib.MessagesController;
 
+let body = new lib.SendMessagesRequest();
 
-var body = new sdk.SendMessagesRequest({
-   "messages":[
-      {
-         "content":"My first message",
-         "destination_number":"YOUR_MOBILE_NUMBER",
-      }
-   ]
+body.messages = [];
+
+body.messages[0] = new lib.Message();
+
+body.messages[0].content = 'Hello world!';
+body.messages[0].destinationNumber = '+61491570156';
+/* Optional Parameters*/
+/* body.messages[0].deliveryReport = false;
+body.messages[0].callbackUrl = 'https://mycallback.com';
+body.messages[0].format = [lib.FormatEnum.SMS];
+body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
+body.messages[0].metadata = JSON.parse('{"key":"value"}');
+body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
+body.messages[0].sourceNumber = '+61491570156';
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+
+const promise = controller.sendMessages(body);
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
 });
+```
 
-controller.createSendMessages(body, function(error, response, context) {
-  console.log(response);
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.MessagesController;
+
+let body = new lib.SendMessagesRequest();
+
+body.messages = [];
+
+body.messages[0] = new lib.Message();
+
+body.messages[0].content = 'Hello world!';
+body.messages[0].destinationNumber = '+61491570156';
+/* Optional Parameters*/
+/* body.messages[0].deliveryReport = false;
+body.messages[0].callbackUrl = 'https://mycallback.com';
+body.messages[0].format = [lib.FormatEnum.SMS];
+body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
+body.messages[0].metadata = JSON.parse('{"key":"value"}');
+body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
+body.messages[0].sourceNumber = '+61491570156';
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+
+controller.sendMessages(body, function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
 });
 ```
 
 ### Send an MMS
 Destination numbers (`destination_number`) should be in the [E.164](http://en.wikipedia.org/wiki/E.164) format. For example, `+61491570156`.
+
+#### Asynchronous
 ```javascript
-const sdk = require('messagemedia-messages-sdk');
-const controller = sdk.MessagesController;
+const lib = require('messagemedia-messages-sdk');
 
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
 
-// Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
+var controller = lib.MessagesController;
 
+let body = new lib.SendMessagesRequest();
 
-var body = new sdk.SendMessagesRequest({
-   "messages":[
-      {
-         "content":"My first message",
-         "destination_number":"YOUR_MOBILE_NUMBER",
-         "format":"MMS",
-         "subject": "This is an MMS message",
-         "media":"https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png"
-      }
-   ]
+body.messages = [];
+
+body.messages[0] = new lib.Message();
+
+body.messages[0].content = 'Hello world!';
+body.messages[0].destinationNumber = '+61491570156';
+body.messages[0].format = [lib.FormatEnum.MMS];
+body.messages[0].media = ['https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png'];
+body.messages[0].subject = 'This is an MMS message';
+/* Optional Parameters*/
+/* body.messages[0].deliveryReport = false;
+body.messages[0].callbackUrl = 'https://mycallback.com';
+body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
+body.messages[0].metadata = JSON.parse('{"key":"value"}');
+body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
+body.messages[0].sourceNumber = '+61491570156';
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+
+const promise = controller.sendMessages(body);
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
 });
+```
 
-controller.createSendMessages(body, function(error, response, context) {
-  console.log(response);
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.MessagesController;
+
+let body = new lib.SendMessagesRequest();
+
+body.messages = [];
+
+body.messages[0] = new lib.Message();
+
+body.messages[0].content = 'Hello world!';
+body.messages[0].destinationNumber = '+61491570156';
+body.messages[0].format = [lib.FormatEnum.MMS];
+body.messages[0].media = ['https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png'];
+body.messages[0].subject = 'This is an MMS message';
+/* Optional Parameters*/
+/* body.messages[0].deliveryReport = false;
+body.messages[0].callbackUrl = 'https://mycallback.com';
+body.messages[0].messageExpiryTimestamp = moment('2018-12-01T00:00:00Z').parseZone('2018-12-01T00:00:00Z');
+body.messages[0].metadata = JSON.parse('{"key":"value"}');
+body.messages[0].scheduled = moment('2018-12-21T00:00:00Z').parseZone('2018-12-21T00:00:00Z');
+body.messages[0].sourceNumber = '+61491570156';
+body.messages[0].sourceNumberType = lib.SourceNumberTypeEnum.INTERNATIONAL; */
+
+controller.sendMessages(body, function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
 });
 ```
 
 ### Get Status of a Message
 You can get a messsage ID from a sent message by looking at the `message_id` from the response of the above example.
+
+#### Asynchronous
 ```javascript
-const sdk = require('messagemedia-messages-sdk');
-const controller = sdk.MessagesController;
+const lib = require('messagemedia-messages-sdk');
 
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
 
-// Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_SECRET_KEY"; // Your Secret Key
+var controller = lib.MessagesController;
 
+let messageId = '877c19ef-fa2e-4cec-827a-e1df9b5509f7';
 
-var messageId = "YOUR_MESSAGE_ID";
+const promise = controller.getMessageStatus(messageId);
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
+});
+```
+
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.MessagesController;
+
+let messageId = '877c19ef-fa2e-4cec-827a-e1df9b5509f7';
 
 controller.getMessageStatus(messageId, function(error, response, context) {
-  console.log(response)
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
 });
 ```
 
 ### Get replies to a message
-You can check for replies that are sent to your messages
+You can check for replies that are sent to your messages.
+
+#### Asynchronous
 ```javascript
-const sdk = require('messagemedia-messages-sdk');
-const controller = sdk.RepliesController;
+const lib = require('messagemedia-messages-sdk');
 
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
 
-// Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
+var controller = lib.RepliesController;
 
+const promise = controller.checkReplies();
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
+});
+```
 
-var messageId = "YOUR_MESSAGE_ID";
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
 
-controller.getCheckReplies(function(error, response, context) {
-  console.log(response);
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.RepliesController;
+
+controller.checkReplies(function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
 });
 ```
 
 ### Check Delivery Reports
 This endpoint allows you to check for delivery reports to inbound and outbound messages.
+
+#### Asynchronous
 ```javascript
-const sdk = require('messagemedia-messages-sdk');
-const controller = sdk.DeliveryReportsController;
+const lib = require('messagemedia-messages-sdk');
 
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
 
-// Configuration parameters and credentials
-sdk.Configuration.basicAuthUserName = "YOUR_API_KEY"; // Your API Key
-sdk.Configuration.basicAuthPassword = "YOUR_API_SECRET"; // Your Secret Key
+var controller = lib.DeliveryReportsController;
 
+const promise = controller.checkDeliveryReports();
+promise.then((response) => {
+    console.log(response);
+}, (err) => {
+    console.log(err);
+});
+```
 
-controller.getCheckDeliveryReports(function(error, response, context) {
-  console.log(response);
+#### Synchronous
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.DeliveryReportsController;
+
+controller.checkDeliveryReports(function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
 });
 ```
 
