@@ -1,5 +1,5 @@
 {
-  "name": "messagemedia-messages-sdk",
+  "name": "@localz/messagemedia-messages-sdk",
   "version": "1.0.0",
   "description": "The MessageMedia Messages API provides a number of endpoints for building powerful two-way messaging applications.",
   "main": "./lib/index.js",
