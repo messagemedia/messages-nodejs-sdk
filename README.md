@@ -195,6 +195,30 @@ controller.checkDeliveryReports(function(error, response, context) {
 });
 ```
 
+### Confirm Delivery Reports
+This endpoint allows you to mark delivery reports as confirmed so they're no longer returned by the Check Delivery Reports function.
+
+```javascript
+const lib = require('messagemedia-messages-sdk');
+
+lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+
+var controller = lib.DeliveryReportsController;
+
+let body = new lib.ConfirmDeliveryReportsAsReceivedRequest();
+
+body.deliveryReportIds = ['011dcead-6988-4ad6-a1c7-6b6c68ea628d', '3487b3fa-6586-4979-a233-2d1b095c7718', 'ba28e94b-c83d-4759-98e7-ff9c7edb87a1'];
+
+controller.confirmDeliveryReportsAsReceived(body, function(error, response, context) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
+});
+```
+
 ### Check credits remaining (Prepaid accounts only)
 This endpoint allows you to check for credits remaining on your prepaid account.
 
