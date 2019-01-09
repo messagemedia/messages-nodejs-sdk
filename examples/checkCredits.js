@@ -9,18 +9,10 @@ var controller = lib.MessagesController;
 
 const promise = controller.checkCreditsRemaining();
 
-/* Async Call */
-promise.then((response) => {
-    console.log(response);
-}, (err) => {
-    console.log(err);
-});
-
-/* Sync Call */
-/*controller.checkCreditsRemaining(function(error, response, context) {
+controller.checkCreditsRemaining(function(error, response, context) {
   if (error) {
     console.log(error);
   } else {
     console.log(response);
   }
-});*/
+});
