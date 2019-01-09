@@ -120,7 +120,7 @@ body.messages[0] = new lib.Message();
 
 body.messages[0].content = 'Hello world!';
 body.messages[0].destinationNumber = '+61491570156';
-body.messages[0].format = [lib.FormatEnum.MMS];
+body.messages[0].format = lib.FormatEnum.MMS;
 body.messages[0].media = ['https://upload.wikimedia.org/wikipedia/commons/6/6a/L80385-flash-superhero-logo-1544.png'];
 body.messages[0].subject = 'This is an MMS message';
 
