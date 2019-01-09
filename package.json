@@ -6,6 +6,8 @@
   "scripts": {
     "lint": "eslint lib"
   },
+  "homepage": "https://developers.messagemedia.com/",
+  "license": "Apache-2.0",
   "author": "MessageMedia Developers",
   "bugs": {
     "email": "developers@messagemedia.com"
