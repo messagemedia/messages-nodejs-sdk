@@ -2,8 +2,14 @@
 
 const lib = require('messagemedia-messages-sdk');
 
-lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
-lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+/* Basic Auth */
+lib.Configuration.basicAuthUserName = "YOUR_BASIC_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_BASIC_SECRET_KEY";
+
+/* HMAC
+lib.Configuration.hmacAuthUserName = "YOUR_HMAC_API_KEY";
+lib.Configuration.hmacAuthPassword = "YOUR_HMAC_SECRET_KEY";
+*/
 
 var controller = lib.MessagesController;
 
