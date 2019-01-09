@@ -16,7 +16,7 @@ The MessageMedia Messages API provides a number of endpoints for building powerf
   * [Contributing](#contributing)
 * [Installation](#star-installation)
 * [Get Started](#clapper-get-started)
-* [API Documentation](#closed_book-api-documentation)
+* [API Documentation](#closed_book-api-reference-documentation)
 * [Need help?](#confused-need-help)
 * [License](#page_with_curl-license)
 
@@ -24,7 +24,7 @@ The MessageMedia Messages API provides a number of endpoints for building powerf
 
 Authentication is done via API keys. Sign up at https://developers.messagemedia.com/register/ to get your API keys.
 
-Requests are authenticated using HTTP Basic Auth or HMAC. Provide your API key as the auth_user_name and API secret as the auth_password.
+Requests are authenticated using HTTP Basic Auth or HMAC. For Basic Auth, your API key will be basicAuthUserName and API secret will be basicAuthPassword. For HMAC, your API key will be hmacAuthUserName and API secret will be hmacAuthPassword. This is demonstrated in the [Send Message example](#send-an-sms) below.
 
 ## :interrobang: Errors
 
@@ -78,8 +78,14 @@ Destination (`destinationNumber`) and source number (`sourceNumber`) should be i
 ```javascript
 const lib = require('messagemedia-messages-sdk');
 
-lib.Configuration.basicAuthUserName = "YOUR_API_KEY";
-lib.Configuration.basicAuthPassword = "YOUR_SECRET_KEY";
+/* Basic Auth */
+lib.Configuration.basicAuthUserName = "YOUR_BASIC_API_KEY";
+lib.Configuration.basicAuthPassword = "YOUR_BASIC_SECRET_KEY";
+
+/* HMAC
+lib.Configuration.hmacAuthUserName = "YOUR_HMAC_API_KEY";
+lib.Configuration.hmacAuthPassword = "YOUR_HMAC_SECRET_KEY";
+*/
 
 var controller = lib.MessagesController;
 
