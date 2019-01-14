@@ -1,5 +1,4 @@
 # MessageMedia Messages NodeJS SDK
-[![Travis Build Status](https://api.travis-ci.org/messagemedia/messages-nodejs-sdk.svg?branch=master)](https://travis-ci.org/messagemedia/messages-nodejs-sdk)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![HitCount](http://hits.dwyl.io/messagemedia/messages-nodejs-sdk.svg)](http://hits.dwyl.io/messagemedia/messages-nodejs-sdk)
 [![npm](https://badge.fury.io/js/messagemedia-messages-sdk.svg)](https://www.npmjs.com/package/messagemedia-messages-sdk)
