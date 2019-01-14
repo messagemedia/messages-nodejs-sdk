@@ -67,7 +67,7 @@ npm install messagemedia-messages-sdk
 
 Alternatively, add the following to the dependencies section of your package.json:
 ```
-"messagemedia-messages-sdk": "^2.0.0"
+"messagemedia-messages-sdk": "^2.0.1"
 ```
 
 ## :clapper: Get Started
