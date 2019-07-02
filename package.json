@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "moment": "^2.17.1",
-    "request": "^2.55.0"
+    "request": "^2.55.0",
+    "speakeasy": "^2.0.0"
   },
   "eslintConfig": {
     "extends": "airbnb",
